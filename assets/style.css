@@ -14,3 +14,17 @@ body,
     padding: 0%;
 }
 
+/* h1 css for the Code Quiz Challenge*/
+h1 {
+    text-align: center;
+    margin-top: 15%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Quiz header css styling */ 
+h2 {
+    text-align: center;
+    padding: 30px;
+    font-family: 'Courier New', Courier, monospace;
+
+}
