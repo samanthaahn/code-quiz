@@ -4,3 +4,13 @@
     padding: 0;
     list-style:none;
 }
+
+/* styling for my html, body, and wrap class*/
+html,
+body,
+.wrap {
+    hieght: 100%;
+    margin: 0%;
+    padding: 0%;
+}
+
