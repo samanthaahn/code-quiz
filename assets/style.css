@@ -12,6 +12,7 @@ body,
     hieght: 100%;
     margin: 0%;
     padding: 0%;
+    background-color: rgb(241, 241, 135);
 }
 
 /* h1 css for the Code Quiz Challenge*/
@@ -49,3 +50,23 @@ h2 {
     padding: 30px;
     font-family: 'Courier New', Courier, monospace;
 }
+
+
+/* this allows the webbrowser to adjust to the size of certain screens like tablets and phones */
+@media (max-width: 690px) {
+    .btn {
+      font-size: 1rem;
+      margin: 16px 0px 0px 0px;
+      padding: 10px 15px;
+    }
+  
+    #password {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .btn {
+      font-size: 0.8rem;
+    }
+  }
