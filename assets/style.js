@@ -12,3 +12,9 @@
 // THEN I can save my initials and score
 
 // Assignment Code
+var 
+var questions
+var answers 
+var userChoice = ''; 
+
+
