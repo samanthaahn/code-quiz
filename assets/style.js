@@ -6,7 +6,7 @@ var choiceA = document.querySelector("#a");
 var choiceB = document.querySelector("#b");
 var choiceC = document.querySelector("#c");
 var choiceD = document.querySelector("#d");
-var timerEl = document.querySelector("#countdown");
+var timer = document.querySelector("#time");
 var buttonEl = document.querySelector(".start");
 var welcome = document.querySelector(".welcome");
 var i = 0;
@@ -70,7 +70,8 @@ function displayQuestion() {
 function timerCountdown() {
   time = setInterval(function () {
     count--;
-    time.textContent = count;
+    console.log(count)
+    timer.textContent = count;
     if (count < 0) {
       finish();
     }
