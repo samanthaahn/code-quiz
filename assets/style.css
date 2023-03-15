@@ -13,6 +13,7 @@ body,
   margin: 0%;
   padding: 0%;
   background-color: rgb(241, 241, 135);
+  text-align: center;
 }
 
 /* h1 css for the Code Quiz Challenge*/
@@ -29,6 +30,16 @@ p {
   font-family: "Courier New", Courier, monospace;
   margin-bottom: 20px;
 }
+
+.start {
+  font-size: 25px;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+}
+
+/* .quiz-questions {
+  display: none;
+} */
 
 /* my "card" element styling */
 .card {
@@ -54,6 +65,12 @@ h2 {
 section {
   display: flex;
   justify-content: space-between;
+}
+
+button {
+  font-family: 'Courier New', Courier, monospace;
+  margin: 5px;
+  flex: column;
 }
 
 /* this allows the webbrowser to adjust to the size of certain screens like tablets and phones */
