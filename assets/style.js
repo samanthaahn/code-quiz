@@ -37,6 +37,16 @@ var testQuestions = [
     choices: ["Numbers and Strings", "Other Arrays", "Booleans", "All of the above"],
     answer: "All of the above",
   },
+  {
+    prompt: "String values must be enclosed with ___ when being assigned to variables.",
+    choices: ["Commas", "Curly Brackets", "Quotes", "Parenthesis"],
+    answer: "Quotes",
+  },
+  {
+    prompt: "A very useful tool used during development and debugging for printing content to the debugger is:",
+    choices: ["JavaScript", "Terminal/Bash", "For Loops", "console.log"],
+    answer: "console.log",
+  },
 ];
 
 answerOptions.addEventListener("click", function(event) {
