@@ -1,44 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/style.css" />
     <title>Code Quiz</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="wrapper">
-        <section>
-            <h2 id="countdown">Timer:</h2>
-            <h2 id="high-score">View High Scores</h2>
-        </section>
-        
-    <header>
+      <section>
+        <h2 id="high-score">View High Scores</h2>
+        <h2 id="countdown">Timer:</h2>
+      </section>
+
+      <header>
         <h1>Code Quiz Challenge</h1>
-        <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds.</p>
-        
-    </header>
+        <p>
+          Try to answer the following code-related questions within the time
+          limit. Keep in mind that incorrect answers will penalize your
+          score/time by ten seconds.
+        </p>
+      </header>
 
-    <div class="card">
-
+      <div class="card">
         <div class="card-header">
-            <h2>Quiz Questions???</h2>
+          <h2 class="quiz-questions">Quiz Questions???</h2>
         </div>
         <div class="card-body">
-        <textarea
-        readonly
-        id="answers">
-        </textarea>
         </div>
-        <button id="a">Option 1</button>
-        <button id="b">Option 2</button>
-        <button id="c">Option 3</button>
-        <button id="d">Option 4</button>
+        <div class="answer-choices">
+          <button id="a">Option 1</button>
+          <button id="b">Option 2</button>
+          <button id="c">Option 3</button>
+          <button id="d">Option 4</button>
         </div>
+      </div>
     </div>
-    </div>
-<script src="./assets/style.js"></script>    
-</body>
+    <script src="./assets/style.js"></script>
+  </body>
 </html>

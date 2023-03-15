@@ -51,14 +51,9 @@ h2 {
     font-family: 'Courier New', Courier, monospace;
 }
 
-#countdown {
-    text-align: right;
-    text-align: inline;
-}
-
-#high-score {
-    text-align: left;
-    text-align: inline;
+section {
+    display: flex;
+    justify-content: space-between;
 }
 
 
