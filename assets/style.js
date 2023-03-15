@@ -9,6 +9,8 @@ var choiceD = document.querySelector("#d");
 var timer = document.querySelector("#time");
 var buttonEl = document.querySelector(".start");
 var welcome = document.querySelector(".welcome");
+var pAnswers = document.querySelector(".correct");
+var nextQuestion = document.querySelector(".next-question");
 var i = 0;
 var userChoice = "";
 var time;
@@ -52,12 +54,20 @@ var testQuestions = [
 answerOptions.addEventListener("click", function (event) {
   console.log(event.target);
   if (testQuestions[i].answer === event.target.textContent) {
+   pAnswers.innerText= 'Correct!'
+  } else {
+    pAnswers.innerText= 'Wrong'
+    count-=10;
   }
   i++;
-  displayQuestion();
 });
 
+nextQuestion.addEventListener('click', function(event) {
+    displayQuestion();
+})
+
 function displayQuestion() {
+    pAnswers.innerText='';
   quizQuestions.textContent = testQuestions[i].prompt;
   choiceA.textContent = testQuestions[i].choices[0];
   choiceB.textContent = testQuestions[i].choices[1];
@@ -66,11 +76,9 @@ function displayQuestion() {
 }
 
 
-
 function timerCountdown() {
   time = setInterval(function () {
     count--;
-    console.log(count)
     timer.textContent = count;
     if (count < 0) {
       finish();
@@ -86,5 +94,4 @@ function startQuiz() {
 
 
 countdown();
-
 displayQuestion();
