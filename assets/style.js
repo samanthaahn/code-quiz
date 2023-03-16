@@ -63,9 +63,6 @@ answerOptions.addEventListener("click", function (event) {
     count-=10;
   }
   i++; //not sure if I can do this 
-  if (i >= testQuestions[4]) {
-    showHighScore();
-  }
 });
 
 // got this from our previous thing but not sure if "i" interferes with my text for my questions 
@@ -86,7 +83,7 @@ function highScoreCounter() {
 highScore.textContent = count;
 localStorage.setItem("highScore", count);
 }
-
+// array of objects with initial and save object with user initial and their score (stringigy and parse) THEN save an array so eacht ime someone new comes in add ot the arry and save to local storage 
 
 // this is supposed to take the person to the next page 
 function showHighScore() {
@@ -95,7 +92,12 @@ function showHighScore() {
 }
 
 nextQuestion.addEventListener('click', function(event) {
+    if (i >= testQuestions.length) {
+    showHighScore();
+  }  else {
     displayQuestion();
+  }
+
 })
 
 function displayQuestion() {
