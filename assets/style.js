@@ -12,12 +12,13 @@ var welcome = document.querySelector(".welcome");
 var pAnswers = document.querySelector(".correct");
 var highScore = document.querySelector(".high-score");
 var nextQuestion = document.querySelector(".next-question");
+var submitHighScoreButton = document.querySelector("#submit-hs");
 var i = 0;
 var userChoice = "";
 var time;
-var textAreaEl = document.querySelector(".textarea"); // this is for my initials 
-var highScoreCounter = ''; //not sure if this is correct
+var textAreaEl = document.querySelector(".textarea"); // this is for my initials
 var count = 100;
+var winners = [];
 var finalScore = "";
 var testQuestions = [
   {
@@ -80,10 +81,28 @@ if (alphabetCharacters.includes(key)) {
 
 //this is my local storage but not sure if this is right? 
 function highScoreCounter() {
-highScore.textContent = count;
-localStorage.setItem("highScore", count);
+//highScore.textContent = count;
+localStorage.setItem("highScore", JSON.stringify(winners));
 }
 // array of objects with initial and save object with user initial and their score (stringigy and parse) THEN save an array so eacht ime someone new comes in add ot the arry and save to local storage 
+
+submitHighScoreButton.addEventListener('click', function(event){
+event.preventDefault();
+var initials = textAreaEl.value.trim();
+console.log(initials, count);
+
+var userInfo = {
+  name: initials,
+  score: count,
+}
+
+winners.push(userInfo)
+highScoreCounter();
+
+console.log(winners);
+})
+
+
 
 // this is supposed to take the person to the next page 
 function showHighScore() {
@@ -93,6 +112,7 @@ function showHighScore() {
 
 nextQuestion.addEventListener('click', function(event) {
     if (i >= testQuestions.length) {
+    finish();
     showHighScore();
   }  else {
     displayQuestion();
@@ -123,8 +143,7 @@ function timerCountdown() {
 
 
 function finish() {
-  clearInterval(timer);
-  highScore();
+  clearInterval(time);
 
 }
 
