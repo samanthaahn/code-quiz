@@ -10,6 +10,7 @@ var timer = document.querySelector("#time");
 var buttonEl = document.querySelector(".start");
 var welcome = document.querySelector(".welcome");
 var pAnswers = document.querySelector(".correct");
+var highScore = document.querySelector(".high-score");
 var nextQuestion = document.querySelector(".next-question");
 var i = 0;
 var userChoice = "";
@@ -60,7 +61,16 @@ answerOptions.addEventListener("click", function (event) {
     count-=10;
   }
   i++;
+
+  if (i >= testQuestions[4]) {
+    showHighScore();
+  }
 });
+
+function showHighScore() {
+  document.getElementsByClassName("quiz-questions").style.display = "none";
+  document.getElementsByClassName("high-score").style.display = "block";
+}
 
 nextQuestion.addEventListener('click', function(event) {
     displayQuestion();
@@ -86,6 +96,14 @@ function timerCountdown() {
   }, 1000);
 }
 
+
+
+function finish() {
+  clearInterval(timer);
+  highScore();
+
+}
+
 function startQuiz() {
   welcome.setAttribute("style", "display:none");
   timerCountdown();
@@ -95,3 +113,9 @@ function startQuiz() {
 
 countdown();
 displayQuestion();
+
+// function highScore()
+
+// .done {
+//   done.textContent("Your high schore is" + (count));
+// }
