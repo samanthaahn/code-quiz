@@ -15,6 +15,7 @@ var nextQuestion = document.querySelector(".next-question");
 var i = 0;
 var userChoice = "";
 var time;
+var highScoreCounter = ''; //not sure if this is correct
 var count = 100;
 var finalScore = "";
 var testQuestions = [
@@ -55,21 +56,28 @@ var testQuestions = [
 answerOptions.addEventListener("click", function (event) {
   console.log(event.target);
   if (testQuestions[i].answer === event.target.textContent) {
-   pAnswers.innerText= 'Correct!'
+  pAnswers.innerText= 'Correct!'
   } else {
     pAnswers.innerText= 'Wrong'
     count-=10;
   }
-  i++;
-
+  i++; //not sure if I can do this 
   if (i >= testQuestions[4]) {
     showHighScore();
   }
 });
 
+//this is my local storage but not sure if this is right? 
+function highScoreCounter() {
+highScore.textContent = count;
+localStorage.setItem("highScore", count);
+}
+
+
+// this is supposed to take the person to the next page 
 function showHighScore() {
-  document.getElementsByClassName("quiz-questions").style.display = "none";
-  document.getElementsByClassName("high-score").style.display = "block";
+  document.querySelector(".card").style.display = "none";
+  document.querySelector(".last-page").style.display = "block";
 }
 
 nextQuestion.addEventListener('click', function(event) {
