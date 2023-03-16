@@ -70,9 +70,9 @@ answerOptions.addEventListener("click", function (event) {
 
 // got this from our previous thing but not sure if "i" interferes with my text for my questions 
 textAreaEl.addEventListener ('keydown', function(event) {
-var key = event.key.toLowerCase();
+var key = event.key.toUpperCase();
 var alphabetCharacters = 'abcdefghijklmnopqrstuvwxyz'.split(
- '' 
+'' 
 );
 if (alphabetCharacters.includes(key)) {
   for (var i =0; i < elements.length; i++) {
