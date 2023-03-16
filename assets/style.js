@@ -15,6 +15,7 @@ var nextQuestion = document.querySelector(".next-question");
 var i = 0;
 var userChoice = "";
 var time;
+var textAreaEl = document.querySelector(".textarea"); // this is for my initials 
 var highScoreCounter = ''; //not sure if this is correct
 var count = 100;
 var finalScore = "";
@@ -66,6 +67,19 @@ answerOptions.addEventListener("click", function (event) {
     showHighScore();
   }
 });
+
+// got this from our previous thing but not sure if "i" interferes with my text for my questions 
+textAreaEl.addEventListener ('keydown', function(event) {
+var key = event.key.toLowerCase();
+var alphabetCharacters = 'abcdefghijklmnopqrstuvwxyz'.split(
+ '' 
+);
+if (alphabetCharacters.includes(key)) {
+  for (var i =0; i < elements.length; i++) {
+    elements[i].textContent += event.key;
+  }
+}
+})
 
 //this is my local storage but not sure if this is right? 
 function highScoreCounter() {
