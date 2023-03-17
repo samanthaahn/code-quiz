@@ -38,6 +38,11 @@ p {
   margin-bottom: 25px;
 }
 
+.high-score {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 30px;
+  
+}
 
 
 /* my "card" element styling */

@@ -25,6 +25,11 @@
         <button class="start" onclick="startQuiz()">Start Quiz</button>
       </header>
 
+      <section class="view-high-scores">
+        <table id="score-table">
+        </table>
+      </section>
+
       <div class="card">
         <div class="card-header">
           <h2 class="quiz-questions">Quiz Questions</h2>
@@ -39,11 +44,11 @@
         </div>
         <button class="next-question">Next Question</button>
       </div>
+    
     <section class="last-page" style="display:none;">
       <div class="high-score">High Scores:</div>
         <p class="done">All Done! Great job on completing this quiz. Input your initials below to keep track of your high score.</p>
         <form><textarea class="textarea" placeholder="Your Initials"></textarea><button id="submit-hs">Button</button></form>
-      
       </div>
     </section>
 

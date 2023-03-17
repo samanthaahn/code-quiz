@@ -10,7 +10,7 @@ var timer = document.querySelector("#time");
 var buttonEl = document.querySelector(".start");
 var welcome = document.querySelector(".welcome");
 var pAnswers = document.querySelector(".correct");
-var highScore = document.querySelector(".high-score");
+var highScore = document.querySelector("#high-score");
 var nextQuestion = document.querySelector(".next-question");
 var submitHighScoreButton = document.querySelector("#submit-hs");
 var i = 0;
@@ -56,14 +56,13 @@ var testQuestions = [
 ];
 
 answerOptions.addEventListener("click", function (event) {
-  console.log(event.target);
   if (testQuestions[i].answer === event.target.textContent) {
   pAnswers.innerText= 'Correct!'
   } else {
     pAnswers.innerText= 'Wrong'
     count-=10;
   }
-  i++; //not sure if I can do this 
+  i++;
 });
 
 // got this from our previous thing but not sure if "i" interferes with my text for my questions 
@@ -81,7 +80,6 @@ if (alphabetCharacters.includes(key)) {
 
 //this is my local storage but not sure if this is right? 
 function highScoreCounter() {
-//highScore.textContent = count;
 localStorage.setItem("highScore", JSON.stringify(winners));
 }
 // array of objects with initial and save object with user initial and their score (stringigy and parse) THEN save an array so eacht ime someone new comes in add ot the arry and save to local storage 
@@ -98,9 +96,22 @@ var userInfo = {
 
 winners.push(userInfo)
 highScoreCounter();
-
 console.log(winners);
 })
+
+
+
+highScore.addEventListener('click', function(){
+var winners = localStorage.getItem('highScore');
+  for(var count = 0; count < winners.length; count++){
+    //take each winner and create
+    // <tr>
+    //   <td>winners[count].name</td>
+    //   <td>winners[count].score</td>
+    // </tr>
+    // take your table row and append to table element
+  }
+});
 
 
 
@@ -156,9 +167,3 @@ function startQuiz() {
 
 countdown();
 displayQuestion();
-
-// function highScore()
-
-// .done {
-//   done.textContent("Your high schore is" + (count));
-// }
