@@ -6,7 +6,7 @@ This is a short coding quiz that tests your knowledge on the basics of html, css
 
 ## Deploy link
 
-
+https://samanthaahn.github.io/code-quiz/
 
 ## Installation
 
