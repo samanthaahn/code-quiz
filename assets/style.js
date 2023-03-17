@@ -92,7 +92,7 @@ submitHighScoreButton.addEventListener('click', function (event) {
     score: count,
   };
 
-  winners = JSON.parse(localStorage.getItem('highScore'));
+  winners = JSON.parse(localStorage.getItem('highScore')) || [];
 
   winners.push(userInfo);
   highScoreCounter();
