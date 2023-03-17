@@ -97,19 +97,20 @@ submitHighScoreButton.addEventListener("click", function (event) {
   console.log(winners);
 });
 
-var tableEl = document.createElement("table");
+
+
+var tableEl = document.createElement("data");
 var rowEl = document.createElement("tr");
 
 highScore.addEventListener("click", function () {
   var winners = JSON.parse(localStorage.getItem("highScore"));
   for (var count = 0; count < winners.length; count++) {
-    console.log(winners[count]);
-  //   tableEl.append(rowEl);
-  //   var element = document.querySelector("#score-table");
-  //   highScore.appendChild(tableEl);
+    // console.log(winners[count]);
 
-  }}
-);
+    tableEl.append(rowEl);
+    var element = document.querySelector("#score-table");
+    highScore.appendChild(tableEl);
+  }});
 
 // this is supposed to take the person to the next page
 function showHighScore() {
