@@ -41,9 +41,22 @@ p {
 .high-score {
   font-family: 'Courier New', Courier, monospace;
   font-size: 30px;
-  
+
 }
 
+#submit-hs {
+  font-size: 20px;
+  padding: 30px;
+  text-align: center;
+}
+
+.textarea {
+  padding: 30px;
+}
+
+#high-score {
+font-size: 30px;
+}
 
 /* my "card" element styling */
 .card {

@@ -57,53 +57,56 @@ var testQuestions = [
 
 answerOptions.addEventListener("click", function (event) {
   if (testQuestions[i].answer === event.target.textContent) {
-  pAnswers.innerText= 'Correct!'
+    pAnswers.innerText = "Correct!";
   } else {
-    pAnswers.innerText= 'Wrong'
-    count-=10;
+    pAnswers.innerText = "Wrong";
+    count -= 10;
   }
   i++;
 });
 
-// got this from our previous thing but not sure if "i" interferes with my text for my questions 
-textAreaEl.addEventListener ('keydown', function(event) {
-var key = event.key.toUpperCase();
-var alphabetCharacters = 'abcdefghijklmnopqrstuvwxyz'.split(
-'' 
-);
-if (alphabetCharacters.includes(key)) {
-  for (var i =0; i < elements.length; i++) {
-    elements[i].textContent += event.key;
+// got this from our previous thing but not sure if "i" interferes with my text for my questions
+textAreaEl.addEventListener("keydown", function (event) {
+  var key = event.key.toUpperCase();
+  var alphabetCharacters = "abcdefghijklmnopqrstuvwxyz".split("");
+  if (alphabetCharacters.includes(key)) {
+    for (var i = 0; i < elements.length; i++) {
+      elements[i].textContent += event.key;
+    }
   }
-}
-})
+});
 
-//this is my local storage but not sure if this is right? 
+//this is my local storage but not sure if this is right?
 function highScoreCounter() {
-localStorage.setItem("highScore", JSON.stringify(winners));
+  localStorage.setItem("highScore", JSON.stringify(winners));
 }
-// array of objects with initial and save object with user initial and their score (stringigy and parse) THEN save an array so eacht ime someone new comes in add ot the arry and save to local storage 
+// array of objects with initial and save object with user initial and their score (stringigy and parse) THEN save an array so eacht ime someone new comes in add ot the arry and save to local storage
 
-submitHighScoreButton.addEventListener('click', function(event){
-event.preventDefault();
-var initials = textAreaEl.value.trim();
-console.log(initials, count);
+submitHighScoreButton.addEventListener("click", function (event) {
+  event.preventDefault();
+  var initials = textAreaEl.value.trim();
+  console.log(initials, count);
 
-var userInfo = {
-  name: initials,
-  score: count,
-}
+  var userInfo = {
+    name: initials,
+    score: count,
+  };
 
-winners.push(userInfo)
-highScoreCounter();
-console.log(winners);
-})
+  winners.push(userInfo);
+  highScoreCounter();
+  console.log(winners);
+});
 
+var tableEl = document.createElement("table");
+var rowEl = document.createElement("tr");
 
+highScore.addEventListener("click", function () {
+  var winners = localStorage.getItem("highScore");
+  for (var count = 0; count < winners.length; count++) {
+    tableEl.append(rowEl);
+    var element = document.querySelector("#score-table");
+    highScore.appendChild(tableEl);
 
-highScore.addEventListener('click', function(){
-var winners = localStorage.getItem('highScore');
-  for(var count = 0; count < winners.length; count++){
     //take each winner and create
     // <tr>
     //   <td>winners[count].name</td>
@@ -113,26 +116,23 @@ var winners = localStorage.getItem('highScore');
   }
 });
 
-
-
-// this is supposed to take the person to the next page 
+// this is supposed to take the person to the next page
 function showHighScore() {
   document.querySelector(".card").style.display = "none";
   document.querySelector(".last-page").style.display = "block";
 }
 
-nextQuestion.addEventListener('click', function(event) {
-    if (i >= testQuestions.length) {
+nextQuestion.addEventListener("click", function (event) {
+  if (i >= testQuestions.length) {
     finish();
     showHighScore();
-  }  else {
+  } else {
     displayQuestion();
   }
-
-})
+});
 
 function displayQuestion() {
-    pAnswers.innerText='';
+  pAnswers.innerText = "";
   quizQuestions.textContent = testQuestions[i].prompt;
   choiceA.textContent = testQuestions[i].choices[0];
   choiceB.textContent = testQuestions[i].choices[1];
@@ -140,22 +140,19 @@ function displayQuestion() {
   choiceD.textContent = testQuestions[i].choices[3];
 }
 
-
 function timerCountdown() {
   time = setInterval(function () {
     count--;
     timer.textContent = count;
-    if (count < 0) {
+    if (count <= 0) {
+      clearInterval(timer);
       finish();
     }
   }, 1000);
 }
 
-
-
 function finish() {
   clearInterval(time);
-
 }
 
 function startQuiz() {
@@ -163,7 +160,6 @@ function startQuiz() {
   timerCountdown();
   displayQuestion();
 }
-
 
 countdown();
 displayQuestion();
