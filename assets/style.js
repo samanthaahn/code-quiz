@@ -101,20 +101,15 @@ var tableEl = document.createElement("table");
 var rowEl = document.createElement("tr");
 
 highScore.addEventListener("click", function () {
-  var winners = localStorage.getItem("highScore");
+  var winners = JSON.parse(localStorage.getItem("highScore"));
   for (var count = 0; count < winners.length; count++) {
-    tableEl.append(rowEl);
-    var element = document.querySelector("#score-table");
-    highScore.appendChild(tableEl);
+    console.log(winners[count]);
+  //   tableEl.append(rowEl);
+  //   var element = document.querySelector("#score-table");
+  //   highScore.appendChild(tableEl);
 
-    //take each winner and create
-    // <tr>
-    //   <td>winners[count].name</td>
-    //   <td>winners[count].score</td>
-    // </tr>
-    // take your table row and append to table element
-  }
-});
+  }}
+);
 
 // this is supposed to take the person to the next page
 function showHighScore() {
